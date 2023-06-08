@@ -32,7 +32,7 @@ def pdf_merger(path):
 
 
 if __name__ == "__main__":
-     path = input("\nInserisci il path dei file docx")
+     path = input("\nInserisci il path dei file docx: ")
      docx2pdf(path)
      pdf_merger(path)
 
