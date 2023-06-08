@@ -4,15 +4,13 @@ from os import listdir, mkdir
 from os.path import isfile, join, exists
 import sys
 
-def docx2pdf():
-    path = input("\nInsert path of the directory with docx files: ")
+def docx2pdf(path):
     if not exists(path+'\\pdf'):
          mkdir(path+'\\pdf')
     convert(path, path+'\\pdf')
     print("\nDocx to Pdf conversion completed successfully")
     
-def pdf_merger():
-    path = input("\nEnter the folder location: ")
+def pdf_merger(path):
     path += '\\pdf'
     pdf_files = [f for f in listdir(path) if isfile(join(path,f)) and '.pdf' in f]
     print("\nList of files:")
@@ -34,8 +32,9 @@ def pdf_merger():
 
 
 if __name__ == "__main__":
-        docx2pdf()
-        pdf_merger()
+     path = input("\nInserisci il path dei file docx")
+     docx2pdf(path)
+     pdf_merger(path)
 
 
 
